@@ -1,0 +1,64 @@
+/* Basic Reset / Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles for centering the container */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #f0f0f0;
+}
+
+/* Optional heading and button styling */
+header {
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Container for the grid */
+#container {
+  /* We’ll make the container 960px wide as requested */
+  width: 960px;
+  margin: 0 auto;  /* center in the page */
+  
+  /* Use Flexbox to wrap squares in rows */
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #000; /* Just to see the boundary */
+}
+
+/* Each square in the grid */
+.grid-square {
+  /* 
+    flex: 0 0 auto makes each item not shrink.
+    We will assign width/height in JS 
+    (but could also do it here if consistent).
+  */
+  border: 1px solid #ccc; 
+  /* 
+    box-sizing: border-box ensures the border is included in total size
+    (avoiding strange sizing issues).
+  */
+  box-sizing: border-box;
+  
+  /* 
+    We’ll handle the rest in script.js by setting 
+    inline width/height based on the chosen grid size.
+  */
+  
+  /* Transition so that the darkening looks smooth (optional) */
+  transition: background-color 0.2s, opacity 0.2s;
+}
